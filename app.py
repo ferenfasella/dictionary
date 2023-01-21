@@ -18,8 +18,6 @@ DB_NAME =  os.environ.get("DB_NAME")
 client = MongoClient(MONGODB_URI)
 db = client[DB_NAME]
 
-
-
 @app.route('/')
 def main():
     words_result = db.words.find({}, {'_id': False})
